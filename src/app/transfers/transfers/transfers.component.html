@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>{{action}} Transfer</h1>
+<div mat-dialog-content>
+    <form [formGroup]="TransferForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Select Transfer</mat-label>
+            <mat-select name="TransferId" formControlName="TransferId" [(ngModel)]="selectedTransfer">
+                <mat-option  *ngFor="let trans of lstTransfers"
+                    [value]="trans.transferId">
+                    {{trans.configValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>ConfigName</mat-label>
+            <input formControlName="ConfigName" matInput  placeholder="Placeholder">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>ConfigValue</mat-label>
+            <textarea formControlName="ConfigValue"  matInput></textarea>
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left:18px;" mat-raised-button color="primary" (click)="addTransfer()">{{actionBtn}}</button>
+</div>

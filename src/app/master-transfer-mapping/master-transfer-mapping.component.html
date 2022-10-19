@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>{{action}} Master Transfer - Transfer Mapping</h1>
+<div mat-dialog-content>
+    <form [formGroup]="MTMappingForm">   
+        <!-- <mat-form-field appearance="outline">
+            <mat-label>MasterTransferId</mat-label>
+            <input formControlName="MasterTransferId" matInput  placeholder="Placeholder">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>TransferId</mat-label>
+            <input formControlName="TransferId" matInput  placeholder="Placeholder">
+        </mat-form-field>     -->
+        <mat-form-field appearance="outline">
+            <mat-label>Transfer Sequence</mat-label>
+            <input formControlName="TransferSequence" matInput  placeholder="Placeholder">
+        </mat-form-field>
+        <!-- <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Is Transfer Enabled</mat-label>
+            <textarea formControlName="IsTransferEnabled"  matInput></textarea>
+        </mat-form-field> -->
+                
+        <mat-form-field appearance="fill">
+            <mat-label>Select an option</mat-label>
+            <mat-select name="IsTransferEnabled" formControlName="IsTransferEnabled" 
+            [value]="IsTransferEnabledVal" 
+            [(ngModel)]="IsTransferEnabledVal">
+              <mat-option [value]="true">True</mat-option>
+              <mat-option [value]="false">False</mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+          <p>You selected: {{IsTransferEnabledVal}}</p>
+
+
+
+    </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left:18px;" mat-raised-button color="primary" (click)="UpdateMTTMapping()">{{actionBtn}}</button>
+</div>

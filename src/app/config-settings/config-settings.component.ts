@@ -1,23 +1,20 @@
-import { Dialog } from '@angular/cdk/dialog';
-import { Component, Inject, OnInit } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DialogComponent } from './dialog/dialog.component';
-import { ApiService } from './services/api.service';
-import {AfterViewInit, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
-import { TransfersComponent } from './transfers/transfers/transfers.component';
-import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+import { ApiService } from '../services/api.service';
+import { TransfersComponent } from '../transfers/transfers/transfers.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-
+  selector: 'app-config-settings',
+  templateUrl: './config-settings.component.html',
+  styleUrls: ['./config-settings.component.css']
 })
-export class AppComponent implements OnInit {
+export class ConfigSettingsComponent implements OnInit {
+
   title = 'wre-distribution-pipeline';
   // displayedColumns: string[] = ['productName', 'category', 'freshness', 'price','comments','date','action'];
   displayedColumns: string[] = [ 'ConfigName', 'ConfigValue','action'];
@@ -223,7 +220,7 @@ constructor(private dialog:MatDialog,private api: ApiService
 
 @Component({
   selector: 'dialog-animations-example-dialog',
-  templateUrl: './dialog-animations-example-dialog.html',
+  templateUrl: './../dialog-animations-example-dialog.html',
 })
 export class DialogAnimationsExampleDialog {
   constructor(public dialogRef: MatDialogRef<DialogAnimationsExampleDialog>) {}

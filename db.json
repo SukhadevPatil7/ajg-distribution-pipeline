@@ -1,0 +1,23 @@
+{
+  "productList": [
+    {
+      "productName": "Swift",
+      "category": "2",
+      "freshness": "Brand New",
+      "price": 12,
+      "comments": "test 12",
+      "date": "2022-06-15T18:30:00.000Z",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
