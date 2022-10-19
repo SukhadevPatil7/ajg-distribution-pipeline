@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "ajg-distribution-pipeline-app",
+			"path": "ajg-distribution-pipeline-app"
+		}
+	],
+	"settings": {}
+}
